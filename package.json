@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@fontsource/roboto": "^5.1.0",
+    "@mui/material": "^6.1.6",
+    "@mui/styled-engine-sc": "^6.1.6",
+    "framer-motion": "^11.11.10",
+    "react-intersection-observer": "^9.13.1",
+    "react-parallax": "^3.5.1",
+    "styled-components": "^6.1.13",
+    "taos": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12"
+  }
+}

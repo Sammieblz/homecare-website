@@ -1,9 +1,20 @@
-import React from 'react'
+
+import Header from '../components/Header';
+import Van from '../components/Van';
 
 const TransportationServices = () => {
   return (
-    <div>TransportationServices</div>
-  )
-}
+    <>
+      <Header logo="src/assets/images/oghosa-logo1.png" />
+      <section>
+        <Van />
+        <div className="container">
 
-export default TransportationServices
+        </div>
+      </section>
+    </>
+
+  );
+};
+
+export default TransportationServices;

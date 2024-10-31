@@ -1,0 +1,14 @@
+.animate {
+    animation: vanAnimation 2s ease-in-out;
+  }
+  
+  @keyframes vanAnimation {
+    from {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 1;
+    }
+  }

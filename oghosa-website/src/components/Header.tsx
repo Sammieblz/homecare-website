@@ -7,7 +7,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
 interface HeaderProps {
-  logo: string; // Path to the logo image
+  logo: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ logo }) => {
@@ -31,16 +31,15 @@ const Header: React.FC<HeaderProps> = ({ logo }) => {
     <>
       <header className="flex justify-between items-center h-16 bg-blue-900 text-white p-4 px-16 py-10">
         <div className="flex items-center">
-          <img src={logo} alt="Oghosa" className="h-8 mr-4" />
-          <span className="text-white font-bold text-lg">Oghosa</span>
+          <img src={logo} alt="Oghosa" className="h-20 w-90 ml-2 mr-2 md:flex" />
         </div>
-        <nav className="hidden md:flex flex-row mr-5">
+        <nav className="hidden md:flex flex-row mr-10">
           <ul className="flex flex-row items-center">
             <li className={`${isHomePage ? 'active' : ''} mr-6 hover:scale-105 transition-transform duration-300`}>
               <Link to="/">Home</Link>
             </li>
             <li className="mr-6 hover:scale-105 transition-transform duration-300">
-              <Link to="/about-us">About</Link>
+              <Link to="/about-us">About Us</Link>
             </li>
             <li className="relative mr-6 flex items-center">
               <button onClick={toggleDropdown} className="focus:outline-none flex items-center">
@@ -86,7 +85,7 @@ const Header: React.FC<HeaderProps> = ({ logo }) => {
                 <Link to="/" onClick={toggleMenu}>Home</Link>
               </li>
               <li className="text-lg hover:scale-105 transition-transform duration-300">
-                <Link to="/about-us" onClick={toggleMenu}>About</Link>
+                <Link to="/about-us" onClick={toggleMenu}>About Us</Link>
               </li>
               <li className="relative text-lg hover:scale-105 transition-transform duration-300 w-full">
                 <button onClick={toggleDropdown} className="focus:outline-none flex items-center w-full">
