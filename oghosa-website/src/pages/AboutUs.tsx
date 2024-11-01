@@ -38,11 +38,11 @@ const AboutUs: React.FC = () => {
   const isVisible2 = useIsVisible(ref2);
   return (
     <section className="about-us">
-      <Header logo="src/assets/images/oghosa-logo1.png" />
+      <Header logo="src/assets/oghosa-logo1.png" />
       
       {/* Parallax Banner */}
       <Parallax
-        bgImage="src/assets/images/diverse-team1.png"
+        bgImage="src/assets/diverse-team1.png"
         strength={500}
         className="parallax-banner"
         bgImageStyle={{ 
@@ -70,7 +70,7 @@ const AboutUs: React.FC = () => {
 
       {/* Parallax Divider */}
       <Parallax
-        bgImage="src/assets/images/healthcare-team.jpg"
+        bgImage="src/assets/healthcare-team.jpg"
         strength={300}
         className="parallax-divider"
         bgImageStyle={{ width: '100%', height: 'auto' }}

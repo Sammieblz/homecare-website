@@ -4,9 +4,9 @@ import { useState, useEffect, RefObject, useRef } from 'react';
 import Header from '../components/Header';
 import { motion } from 'framer-motion'; 
 import { FaFacebook, FaGoogle } from 'react-icons/fa';
-import BBBLogo from '../assets/images/blue-seal-153-100-oghosahomehealthcare-b8fbfd2.png';
-import HealthCareImage from '../assets/images/nursing-home.png';
-import TransportationImage from '../assets/images/van.png';
+import BBBLogo from '../assets/blue-seal-153-100-oghosahomehealthcare-b8fbfd2.png';
+import HealthCareImage from '../assets/nursing-home.png';
+import TransportationImage from '../assets/van.png';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 
@@ -53,11 +53,11 @@ const Home: React.FC = () => {
   
   return (
     <>
-      <Header logo="src/assets/images/oghosa-logo1.png" />
+      <Header logo="src/assets/oghosa-logo1.png" />
       <section className="relative h-screen">
         {/* Background Image */}
         <img
-          src="src/assets/images/homepage.png"
+          src="src/assets/homepage.png"
           alt="Background Image"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -188,7 +188,7 @@ const Home: React.FC = () => {
 
           <div className="md:w-1/3 flex justify-center md:justify-end">
             <img
-              src="src/assets/images/transportation1.jpg"
+              src="src/assets/transportation1.jpg"
               alt="quality"
               className="rounded-lg"
             />
@@ -198,7 +198,7 @@ const Home: React.FC = () => {
         <div ref={ref5} className={`mt-12 md:flex md:justify-between md:items-center bg-blue-50 p-8 mb-12 rounded-lg transition-opacity ease-in duration-1000 ${isVisible5 ? "opacity-100" : "opacity-0"}`}>
           <div className="md:w-1/2">
             <img
-              src="src/assets/images/independent-client.png"
+              src="src/assets/independent-client.png"
               alt="How can I help you?"
               className="rounded-lg"
             />
