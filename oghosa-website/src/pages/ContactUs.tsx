@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 export default function ContactUs() {
   return (
     <>
-      <Header logo="src/assets/oghosa-logo1.png" />
+      <Header logo="src/static/oghosa-logo1.png" />
       <section className="bg-gray-100 p-8 flex flex-col lg:flex-row items-center lg:items-start space-y-8 lg:space-y-0 lg:space-x-16 animate-fade-in">
         {/* Form Section */}
         <div className="w-full lg:w-1/2 bg-white shadow-lg rounded-lg p-6 transform hover:scale-105 transition duration-500 ease-in-out">
