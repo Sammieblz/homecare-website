@@ -5,7 +5,7 @@ import '../styles/HomeCareServices.css'
 export default function HomeCareServices() {
   return (
     <>
-      <div className="home-care-services"><Header logo="public/static/oghosa-logo1.png" /></div>
+      <div className="home-care-services"><Header logo="/public/Images/oghosa-logo1.png" /></div>
       <body>
         <div className="card bg-blue-900 text-white flex items-center justify-center min-h-screen">
           <div className="text-center px-6 py-12">
@@ -30,7 +30,7 @@ export default function HomeCareServices() {
             </p>
             <p className="text-black text-lg md:text-xl mb-6 font-medium">Our Staff are driven by valued Person-centered thinking a set of core skills that our Service Providers uses to see beyond a disability to support an individual in obtaining a life that he or she would like. </p>
             <div className="flex justify-center mt-4">
-              <img src="public/static/healthcare.jpg" alt="Home Health Care" className="w-full max-w-md rounded-lg shadow-lg" />
+              <img src="/public/Images/healthcare.jpg" alt="Home Health Care" className="w-full max-w-md rounded-lg shadow-lg" />
             </div>
           </div> 
         </div>
@@ -67,7 +67,7 @@ export default function HomeCareServices() {
               the inclusion in community activities and opportunities to practice social skills, and appeal to member interests like art, 
               science, economic development, technology, math and gardening.</p>
             <div className="flex justify-center mt-4">
-              <img src="public/static/activity-center1.png" alt="Activity Day Center" className="w-full max-w-md rounded-lg shadow-lg" />
+              <img src="/public/Images/activity-center1.png" alt="Activity Day Center" className="w-full max-w-md rounded-lg shadow-lg" />
             </div>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function HomeCareServices() {
             </p>
             <p>At Oghosa Home Health Care & Transportation, we offer companionship as well as help with personal care tasks such as bathing, dressing, grocery shopping, laundry, house cleaning, food preparation, and more. </p>
             <div className="flex justify-center mt-4">
-              <img src="public/static/compasion.jpeg" alt="Activity Day Center" className="w-full max-w-md rounded-lg shadow-lg" />
+              <img src="/public/Images/compasion.jpeg" alt="Activity Day Center" className="w-full max-w-md rounded-lg shadow-lg" />
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@ export default function HomeCareServices() {
             Our experienced and trained professionals at Oghosa Home Health Care & Transportation, LLC provide assistance with daily living activities for clients in Cleveland, OH and the surrounding areas. 
             </p>
             <div className="flex justify-center mt-4">
-              <img src="public/static/homepage.png" alt="Activity Day Center" className="w-full max-w-md rounded-lg shadow-lg" />
+              <img src="/public/Images/homepage.png" alt="Activity Day Center" className="w-full max-w-md rounded-lg shadow-lg" />
             </div>
           </div>
         </div>
@@ -102,7 +102,7 @@ export default function HomeCareServices() {
             </p>
             <p> Our experienced caregivers provide all the services you need to help our clients maintain as much independence as possible while providing them with the extra support they need.</p>
             <div className="flex justify-center mt-4">
-              <img src="public/static/care.jpg" alt="Activity Day Center" className="w-full max-w-md rounded-lg shadow-lg" />
+              <img src="/public/Images/care.jpg" alt="Activity Day Center" className="w-full max-w-md rounded-lg shadow-lg" />
             </div>
           </div>
         </div>
@@ -114,14 +114,14 @@ export default function HomeCareServices() {
             </p>
             <p> At Oghosa Home Health Care & Transportation, our caregivers are experienced and can help your loved one be safe, protected, and cared for in their home. Remaining at home for as long as possible is often best for elderly patients struggling with memory problems because the familiar surroundings help them feel safe.</p>
             <div className="flex justify-center mt-4">
-              <img src="public/static/independent-client.png" alt="Activity Day Center" className="w-full max-w-md rounded-lg shadow-lg" />
+              <img src="/public/Images/independent-client.png" alt="Activity Day Center" className="w-full max-w-md rounded-lg shadow-lg" />
             </div>
           </div>
         </div>
         <div className="card bg-white text-black flex-col items-center justify-center min-h-screen p-12">
           <h5 className='text-black font-semibold p-2'>Click to see our BBB Rating & Accreditation</h5>
           <a href="https://www.bbb.org/us/oh/cleveland/profile/home-care/oghosa-home-health-care-llc-0312-92018725" target="_blank" rel="noopener noreferrer" className="hover:underline">
-            <img src="public/static/bbb-logo1.png" alt="See Our Better Business Profile A+" className="w-40 h-auto" />
+            <img src="/public/Images/bbb-logo1.png" alt="See Our Better Business Profile A+" className="w-40 h-auto" />
             <div className="text-black">
               <span><strong>Accredited Since:</strong> 8/20/2016</span><br/>
               <span><strong>Years in Business:</strong> 11</span>

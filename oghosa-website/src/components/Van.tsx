@@ -37,7 +37,7 @@ const Van: React.FC<VanProps> = ({ className }) => {
       initial="initial"
       animate={controls}
     >
-      <img src="public/static/van1.png" alt="Van" className="van-image" />
+      <img src="/public/Images/static/van1.png" alt="Van" className="van-image" />
     </motion.div>
   );
 };

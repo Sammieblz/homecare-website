@@ -27,7 +27,7 @@ const TransportationServices = () => {
 
   return ( 
     <> 
-      <Header logo="public/static/oghosa-logo1.png" /> 
+      <Header logo="/public/Images/oghosa-logo1.png" /> 
       <section className="transportation-section"> 
         <Van className="van-animation" /> 
         <motion.div className="content" variants={containerVariants} initial="initial" animate="animate"> 
