@@ -53,11 +53,11 @@ const Home: React.FC = () => {
   
   return (
     <>
-      <Header logo="/public/Images/oghosa-logo1.png" />
+      <Header logo="./public/Images/oghosa-logo1.png" />
       <section className="relative h-screen">
         {/* Background Image */}
         <img
-          src="/public/Images/homepage.png"
+          src="./public/Images/homepage.png"
           alt="Background Image"
           className="absolute inset-0 w-full h-full object-cover"
         />
