@@ -4,9 +4,9 @@ import { useState, useEffect, RefObject, useRef } from 'react';
 import Header from '../components/Header';
 import { motion } from 'framer-motion'; 
 import { FaFacebook, FaGoogle } from 'react-icons/fa';
-import BBBLogo from '../assets/images/blue-seal-153-100-oghosahomehealthcare-b8fbfd2.png';
-import HealthCareImage from '../assets/images/nursing-home.png';
-import TransportationImage from '../assets/images/van.png';
+import BBBLogo from '/assets/images/blue-seal-153-100-oghosahomehealthcare-b8fbfd2.png';
+import HealthCareImage from '/assets/images/nursing-home.png';
+import TransportationImage from '/assets/images/van.png';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 
