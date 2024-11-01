@@ -1,0 +1,23 @@
+/* Footer.module.css */
+
+.container {
+    max-width: 1200px;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  footer p, footer h4 {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  footer ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
+  }
+  
+  footer ul li a:hover {
+    color: #ffffff;
+  }
+  

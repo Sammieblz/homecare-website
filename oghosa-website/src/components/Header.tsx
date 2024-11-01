@@ -17,97 +17,110 @@ const Header: React.FC<HeaderProps> = ({ logo }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  // Handle menu toggle for mobile view
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Handle dropdown for Services link
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
     <>
-      <header className="flex justify-between items-center h-16 bg-blue-900 text-white p-4 px-16 py-10">
+      <header className="flex justify-between items-center h-20 bg-blue-900 text-white p-4 px-6 lg:px-16">
         <div className="flex items-center">
-          <img src={logo} alt="Oghosa" className="h-20 w-90 ml-2 mr-2 md:flex" />
+          <img src={logo} alt="Oghosa" className="h-12 w-auto lg:h-20" />
         </div>
-        <nav className="hidden md:flex flex-row mr-10">
-          <ul className="flex flex-row items-center">
-            <li className={`${isHomePage ? 'active' : ''} mr-6 hover:scale-105 transition-transform duration-300`}>
+
+        {/* Navigation Menu */}
+        <nav className="hidden md:flex flex-row items-center space-x-6">
+          <ul className="flex items-center space-x-6">
+            <li className={`${isHomePage ? 'active' : ''} hover:scale-105 transition-transform duration-300`}>
               <Link to="/">Home</Link>
             </li>
-            <li className="mr-6 hover:scale-105 transition-transform duration-300">
+            <li className="hover:scale-105 transition-transform duration-300">
               <Link to="/about-us">About Us</Link>
             </li>
-            <li className="relative mr-6 flex items-center">
-              <button onClick={toggleDropdown} className="focus:outline-none flex items-center">
-                Services 
-                {isDropdownOpen ? <ArrowDropUpIcon className="ml-1" /> : <ArrowDropDownIcon className="ml-1" />}
+            <li className="relative">
+              <button onClick={toggleDropdown} className="flex items-center focus:outline-none">
+                Services
+                {isDropdownOpen ? (
+                  <ArrowDropUpIcon className="ml-1" />
+                ) : (
+                  <ArrowDropDownIcon className="ml-1" />
+                )}
               </button>
-              {/* Dropdown links */}
               {isDropdownOpen && (
-                <ul className="absolute left-0 top-8 bg-blue-800 rounded-md shadow-md w-48 p-2 z-50">
-                  <li className="px-4 py-2 font-bold hover:bg-blue-700 hover:font-bold transition-colors">
+                <ul className="absolute left-0 top-10 bg-blue-800 rounded-md shadow-md w-48 p-2 z-50">
+                  <li className="px-4 py-2 hover:bg-blue-700 transition-colors">
                     <Link to="/home-care-services">Home Care Services</Link>
                   </li>
-                  <li className="px-4 py-2 font-bold hover:bg-blue-700 hover:font-bold transition-colors">
+                  <li className="px-4 py-2 hover:bg-blue-700 transition-colors">
                     <Link to="/transportation-services">Transportation Services</Link>
                   </li>
                 </ul>
               )}
             </li>
-            <li className="mr-6 hover:scale-105 transition-transform duration-300">
-              <Link to="/contact-us">Contact</Link>
+            <li className="hover:scale-105 transition-transform duration-300">
+              <Link to="/contact-us">Contact Us</Link>
             </li>
             <li>
-              <Link to="/get-started" className="bg-white text-blue-900 px-4 py-2 rounded-md hover:bg-blue-400 hover:text-white hover:scale-105 transition-transform duration-500">
+              <Link
+                to="/contact-us"
+                className="bg-white text-blue-900 px-4 py-2 rounded-md hover:bg-blue-400 hover:text-white hover:scale-105 transition-transform duration-300"
+              >
                 Get Started
               </Link>
             </li>
           </ul>
         </nav>
 
-        {/* Hamburger menu for mobile */}
-        <IconButton className="block md:hidden text-white" onClick={toggleMenu}>
+        {/* Hamburger Icon for Mobile */}
+        <IconButton className="md:hidden text-white" onClick={toggleMenu}>
           <MenuIcon fontSize="large" />
         </IconButton>
 
-        {/* Overlay Menu for Mobile (Right-side) */}
+        {/* Right-Side Overlay Menu */}
         {isMenuOpen && (
-          <div className="fixed inset-y-0 right-0 bg-blue-900 bg-opacity-90 z-50 w-64 flex flex-col items-center justify-start pt-10">
-            <IconButton className="absolute top-5 right-5 text-white" onClick={toggleMenu}>
+          <div className="fixed inset-y-0 right-0 w-3/4 max-w-xs bg-blue-900 bg-opacity-90 z-50 transform transition-transform duration-300 translate-x-0">
+            <IconButton 
+              className="absolute top-4 left-1/2 transform -translate-x-1/2 text-white" 
+              onClick={toggleMenu}
+              aria-label="Close menu"
+            >
               <CloseIcon fontSize="large" />
             </IconButton>
-            <ul className="flex flex-col items-start mt-20 space-y-6 w-full pl-10">
-              <li className="text-lg hover:scale-105 transition-transform duration-300">
+            <ul className="flex flex-col items-start mt-20 space-y-6 pl-10 text-lg">
+              <li className="hover:scale-105 transition-transform duration-300">
                 <Link to="/" onClick={toggleMenu}>Home</Link>
               </li>
-              <li className="text-lg hover:scale-105 transition-transform duration-300">
+              <li className="hover:scale-105 transition-transform duration-300">
                 <Link to="/about-us" onClick={toggleMenu}>About Us</Link>
               </li>
-              <li className="relative text-lg hover:scale-105 transition-transform duration-300 w-full">
-                <button onClick={toggleDropdown} className="focus:outline-none flex items-center w-full">
-                  Services 
-                  {isDropdownOpen ? <ArrowDropUpIcon className="ml-1" /> : <ArrowDropDownIcon className="ml-1" />}
+              <li className="relative hover:scale-105 transition-transform duration-300">
+                <button onClick={toggleDropdown} className="flex items-center focus:outline-none">
+                  Services
+                  {isDropdownOpen ? (
+                    <ArrowDropUpIcon className="ml-1 text-white" />
+                  ) : (
+                    <ArrowDropDownIcon className="ml-1 text-white" />
+                  )}
                 </button>
-                {/* Mobile Dropdown links */}
                 {isDropdownOpen && (
-                  <ul className="bg-blue-800 rounded-md shadow-md w-full pl-4">
-                    <li className="py-2 font-bold hover:underline hover:font-bold transition-colors">
+                  <ul className="bg-blue-800 rounded-md shadow-md w-full mt-2">
+                    <li className="px-4 py-2 hover:bg-blue-700 transition-colors">
                       <Link to="/home-care-services" onClick={toggleMenu}>Home Care Services</Link>
                     </li>
-                    <li className="py-2 font-bold hover:underline hover:font-bold transition-colors">
+                    <li className="px-4 py-2 hover:bg-blue-700 transition-colors">
                       <Link to="/transportation-services" onClick={toggleMenu}>Transportation Services</Link>
                     </li>
                   </ul>
                 )}
               </li>
-              <li className="text-lg hover:scale-105 transition-transform duration-300">
-                <Link to="/contact-us" onClick={toggleMenu}>Contact</Link>
+              <li className="hover:scale-105 transition-transform duration-300">
+                <Link to="/contact-us" onClick={toggleMenu}>Contact Us</Link>
               </li>
-              <li className="text-lg bg-white text-blue-900 px-4 py-2 rounded-md hover:bg-blue-400 hover:text-white hover:scale-105 transition-transform duration-500">
+              <li className="bg-white text-blue-900 px-4 py-2 rounded-md hover:bg-blue-400 hover:text-white transition-transform duration-500">
                 <Link to="/get-started" onClick={toggleMenu}>Get Started</Link>
               </li>
             </ul>

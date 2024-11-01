@@ -1,4 +1,5 @@
 import React from 'react';
+import { PopupModal } from 'react-calendly';
 import { useState, useEffect, RefObject, useRef } from 'react';
 import Header from '../components/Header';
 import { motion } from 'framer-motion'; 
@@ -6,6 +7,8 @@ import { FaFacebook, FaGoogle } from 'react-icons/fa';
 import BBBLogo from '../assets/images/blue-seal-153-100-oghosahomehealthcare-b8fbfd2.png';
 import HealthCareImage from '../assets/images/nursing-home.png';
 import TransportationImage from '../assets/images/van.png';
+import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 
 export function useIsVisible(ref: RefObject<HTMLElement>): boolean {
@@ -31,6 +34,7 @@ export function useIsVisible(ref: RefObject<HTMLElement>): boolean {
 
 
 const Home: React.FC = () => {
+  const [isCalendlyOpen, setCalendlyOpen] = useState(false);
   const ref1 = useRef<HTMLDivElement>(null);
   const isVisible1 = useIsVisible(ref1);
 
@@ -45,6 +49,7 @@ const Home: React.FC = () => {
 
   const ref5 = useRef<HTMLDivElement>(null);
   const isVisible5 = useIsVisible(ref5);
+  
   
   return (
     <>
@@ -79,21 +84,24 @@ const Home: React.FC = () => {
               <span className='font-semibold'>"Oghosa" means God's own</span>
             </motion.p>
 
-            <motion.button
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium shadow-md"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              Learn More
-            </motion.button>
+            <Link to="home-care-services">
+              <motion.button
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium shadow-md"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              >
+                Learn More
+              </motion.button>
+            </Link>
+
           </div>
         </div>
       </section>
 
       {/* Blue Section Divider */}
       <section className="bg-blue-900 text-white py-8">
-        <div  ref={ref1} className={`container mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-center transition-opacity ease-in duration-1000 ${isVisible1 ? "opacity-100" : "opacity-0"}`}>
+        <div ref={ref1} className={`container mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-center transition-opacity ease-in duration-1000 ${isVisible1 ? "opacity-100" : "opacity-0"}`}>
           <motion.p
             className="text-lg md:w-2/3"
             initial={{ opacity: 0, y: 30 }}
@@ -104,6 +112,7 @@ const Home: React.FC = () => {
           </motion.p>
 
           <motion.button
+            onClick={() => setCalendlyOpen(true)} // Trigger Calendly modal
             className="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium shadow-md"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -113,6 +122,15 @@ const Home: React.FC = () => {
           </motion.button>
         </div>
       </section>
+
+      {/* Calendly Modal */}
+      <PopupModal
+        url="https://calendly.com/oghosatransport"
+        onModalClose={() => setCalendlyOpen(false)}
+        open={isCalendlyOpen}
+        rootElement={document.getElementById('root') as HTMLElement}
+      />
+
 
       <section className="bg-white text-gray-900 py-12">
   <div className={`container mx-auto px-6`}>
@@ -137,7 +155,7 @@ const Home: React.FC = () => {
       <h2 className="text-3xl font-bold mb-8">Our Services Include</h2>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
         {/* Card 1 */}
-        <a href="/home-health-care" className="bg-gray-100 p-6 rounded-lg shadow-md flex items-start transform hover:scale-105 transition-transform duration-300">
+        <a href="/home-care-services" className="bg-gray-100 p-6 rounded-lg shadow-md flex items-start transform hover:scale-105 transition-transform duration-300">
           <img src={HealthCareImage} alt="Home Health Care" className="w-16 h-16 mr-4 rounded-full" />
           <div>
             <h3 className="text-xl font-bold mb-2">Home Health Care</h3>
@@ -222,6 +240,7 @@ const Home: React.FC = () => {
     </div>
   </div>
 </section>
+    <Footer />
       
     </>
   );

@@ -5,6 +5,7 @@ import { useState, useEffect, RefObject, useRef } from 'react';
 import { GiSelfLove } from "react-icons/gi";
 import '../styles/AboutUs.css'; 
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 
 export function useIsVisible(ref: RefObject<HTMLElement>): boolean {
@@ -151,6 +152,7 @@ const AboutUs: React.FC = () => {
           Explore Our Home-Healthcare Services
         </a>
       </div>
+      <Footer />
     </section>
   );
 };
