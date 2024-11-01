@@ -121,7 +121,7 @@ const Header: React.FC<HeaderProps> = ({ logo }) => {
                 <Link to="/contact-us" onClick={toggleMenu}>Contact Us</Link>
               </li>
               <li className="bg-white text-blue-900 px-4 py-2 rounded-md hover:bg-blue-400 hover:text-white transition-transform duration-500">
-                <Link to="/get-started" onClick={toggleMenu}>Get Started</Link>
+                <Link to="/contact-us" onClick={toggleMenu}>Get Started</Link>
               </li>
             </ul>
           </div>
