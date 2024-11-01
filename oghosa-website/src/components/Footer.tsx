@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-8 lg:px-16 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo & Copyright */}
         <div className="flex flex-col items-center md:items-start space-y-4">
-          <img src="src/static/oghosa-logo2.png" alt="Oghosa Logo" className="w-16 h-16 mb-2" />
+          <img src="public/static/oghosa-logo2.png" alt="Oghosa Logo" className="w-16 h-16 mb-2" />
           <p className="text-sm text-center md:text-left">
             © 2024 Oghosa Home Health Care & Transportation, LLC<br />
             All Rights Reserved.
