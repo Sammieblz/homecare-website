@@ -66,11 +66,11 @@
   
   @media (max-width: 480px) {
     .about-us .overlay {
-        height: 50vh;
+        height: 30vh;
         display: flex;
     }
     .parallax-banner {
-      height: 40vh; 
+      height: 25vh; 
     }
   
     .banner-title {
