@@ -30,7 +30,7 @@ export default function HomeCareServices() {
             </p>
             <p className="text-black text-lg md:text-xl mb-6 font-medium">Our Staff are driven by valued Person-centered thinking a set of core skills that our Service Providers uses to see beyond a disability to support an individual in obtaining a life that he or she would like. </p>
             <div className="flex justify-center mt-4">
-              <img src="/Images/healthcare.jpg" alt="Home Health Care" className="w-full max-w-md rounded-lg shadow-lg" />
+              <img src="/Images/caregiver1.jpg" alt="Home Health Care" className="w-full max-w-md rounded-lg shadow-lg" />
             </div>
           </div> 
         </div>
