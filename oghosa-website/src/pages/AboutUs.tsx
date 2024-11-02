@@ -38,7 +38,7 @@ const AboutUs: React.FC = () => {
   const isVisible2 = useIsVisible(ref2);
   return (
     <section className="about-us">
-      <Header logo="/Images/oghosa-logo1.png" />
+      <Header logo="/Images/ogosa-logo-nobg.png" />
       
       {/* Parallax Banner */}
       <Parallax

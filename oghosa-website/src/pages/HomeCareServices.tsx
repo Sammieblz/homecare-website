@@ -5,7 +5,7 @@ import '../styles/HomeCareServices.css'
 export default function HomeCareServices() {
   return (
     <>
-      <div className="home-care-services"><Header logo="/Images/oghosa-logo1.png" /></div>
+      <div className="home-care-services"><Header logo="/Images/ogosa-logo-nobg.png" /></div>
       <body>
         <div className="card bg-blue-900 text-white flex items-center justify-center min-h-screen">
           <div className="text-center px-6 py-12">

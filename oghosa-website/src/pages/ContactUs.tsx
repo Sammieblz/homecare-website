@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 export default function ContactUs() {
   return (
     <>
-      <Header logo="/Images/oghosa-logo1.png" />
+      <Header logo="/Images/ogosa-logo-nobg.png" />
       <section className="bg-gray-100 p-8 flex flex-col lg:flex-row items-center lg:items-start space-y-8 lg:space-y-0 lg:space-x-16 animate-fade-in">
         {/* Form Section */}
         <div className="w-full lg:w-1/2 bg-white shadow-lg rounded-lg p-6 transform hover:scale-105 transition duration-500 ease-in-out">
@@ -88,7 +88,7 @@ export default function ContactUs() {
             <p>See us on Facebook & Google Reviews</p>
           </div>
           <div className="flex space-x-4 p-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/OghosaHomeHealthCareLLC/reviews" target="_blank" rel="noopener noreferrer">
               <FaFacebook className="text-5xl text-blue-600 hover:text-blue-300 transition-colors duration-300" />
             </a>
             <a href="https://www.google.com/search?q=oghosa+home+care+euclid&rlz=1C1RXQR_enUS1112US1112&oq=ogh&gs_lcrp=EgZjaHJvbWUqCAgDEEUYJxg7MgYIABBFGDwyBggBEEUYPDIICAIQRRgnGDsyCAgDEEUYJxg7MgYIBBBFGDsyBggFEEUYOTIGCAYQRRg8MgYIBxBFGDzSAQgyOTM2ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8#lrd=0x88310008a756c841:0x51b5b3f4e5a9add3,3,,,," target="_blank" rel="noopener noreferrer">

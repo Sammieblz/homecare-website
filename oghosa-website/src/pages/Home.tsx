@@ -53,7 +53,7 @@ const Home: React.FC = () => {
   
   return (
     <>
-      <Header logo="/Images/oghosa-logo1.png" />
+      <Header logo="/Images/ogosa-logo-nobg.png" />
       <section className="relative h-screen">
         {/* Background Image */}
         <img
@@ -223,14 +223,14 @@ const Home: React.FC = () => {
       </div>
       <div className="mt-4 md:mt-0 flex space-x-4">
         <a
-          href="https://facebook.com"
+          href="https://www.facebook.com/OghosaHomeHealthCareLLC/reviews"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaFacebook className="text-6xl text-blue-600 hover:text-blue-700 transition-colors duration-300" />
         </a>
         <a
-          href="https://google.com/reviews"
+          href="https://www.google.com/search?q=oghosa+home+care+euclid&rlz=1C1RXQR_enUS1112US1112&oq=ogh&gs_lcrp=EgZjaHJvbWUqCAgDEEUYJxg7MgYIABBFGDwyBggBEEUYPDIICAIQRRgnGDsyCAgDEEUYJxg7MgYIBBBFGDsyBggFEEUYOTIGCAYQRRg8MgYIBxBFGDzSAQgyOTM2ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8#lrd=0x88310008a756c841:0x51b5b3f4e5a9add3,3,,,,"
           target="_blank"
           rel="noopener noreferrer"
         >
