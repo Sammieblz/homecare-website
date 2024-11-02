@@ -4,9 +4,9 @@ import { useState, useEffect, RefObject, useRef } from 'react';
 import Header from '../components/Header';
 import { motion } from 'framer-motion'; 
 import { FaFacebook, FaGoogle } from 'react-icons/fa';
-import BBBLogo from '../../public/Images/blue-seal-153-100-oghosahomehealthcare-b8fbfd2.png';
-import HealthCareImage from '../../public/Images/nursing-home.png';
-import TransportationImage from '../../public/Images/van.png';
+import BBBLogo from '/Images/blue-seal-153-100-oghosahomehealthcare-b8fbfd2.png';
+import HealthCareImage from '/Images/nursing-home.png';
+import TransportationImage from '/Images/van.png';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 
@@ -53,11 +53,11 @@ const Home: React.FC = () => {
   
   return (
     <>
-      <Header logo="./public/Images/oghosa-logo1.png" />
+      <Header logo="/Images/oghosa-logo1.png" />
       <section className="relative h-screen">
         {/* Background Image */}
         <img
-          src="./public/Images/homepage.png"
+          src="/Images/homepage.png"
           alt="Background Image"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -188,7 +188,7 @@ const Home: React.FC = () => {
 
           <div className="md:w-1/3 flex justify-center md:justify-end">
             <img
-              src="/public/Images/transportation1.jpg"
+              src="/Images/transportation1.jpg"
               alt="quality"
               className="rounded-lg"
             />
@@ -198,7 +198,7 @@ const Home: React.FC = () => {
         <div ref={ref5} className={`mt-12 md:flex md:justify-between md:items-center bg-blue-50 p-8 mb-12 rounded-lg transition-opacity ease-in duration-1000 ${isVisible5 ? "opacity-100" : "opacity-0"}`}>
           <div className="md:w-1/2">
             <img
-              src="/public/Images/independent-client.png"
+              src="/Images/independent-client.png"
               alt="How can I help you?"
               className="rounded-lg"
             />
