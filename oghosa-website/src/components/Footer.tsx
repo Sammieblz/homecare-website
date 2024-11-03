@@ -1,4 +1,3 @@
-
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import '../styles/Footer.module.css';
 
@@ -16,7 +15,7 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div>
+        <div className="text-center md:text-left">
           <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
           <ul className="space-y-2">
             <li><a href="/" className="hover:underline">Home</a></li>
@@ -28,7 +27,7 @@ const Footer = () => {
         </div>
 
         {/* Our Services */}
-        <div>
+        <div className="text-center md:text-left">
           <h4 className="text-lg font-semibold mb-4">Our Services</h4>
           <ul className="space-y-2">
             <li><a href="/home-care-services" className="hover:underline">Home Health Care</a></li>

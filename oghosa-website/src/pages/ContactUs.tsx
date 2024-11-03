@@ -39,7 +39,7 @@ export default function ContactUs() {
             <FaClock className="text-blue-500 text-2xl" />
             <div>
               <h4 className="text-lg font-semibold">Hours of Operation</h4>
-              <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+              <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
               <p>Saturday: Closed</p>
               <p>Sunday: Closed</p>
             </div>

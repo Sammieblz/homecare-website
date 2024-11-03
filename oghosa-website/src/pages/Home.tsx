@@ -64,9 +64,9 @@ const Home: React.FC = () => {
 
         {/* Dark Overlay and Content */}
         <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-start items-center text-white px-10">
-          <div className="container mx-auto text-left max-w-lg">
+          <div className="container items-center mx-auto text-center max-w-lg">
             <motion.h1
-              className="text-5xl font-bold mb-4 leading-tight"
+              className="text-5xl text-center font-bold mb-4 leading-tight"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
@@ -75,13 +75,13 @@ const Home: React.FC = () => {
             </motion.h1>
 
             <motion.p
-              className="text-lg mb-6"
+              className="text-lg text-center mb-6"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
             >
               Providing Compassionate In-Home Care and Safe Transportation Solutions for Your Loved Ones.<br/>
-              <span className='font-semibold'>"Oghosa" means God's own</span>
+              <span className='font-semibold text-center'>"Oghosa" means God's own</span>
             </motion.p>
 
             <Link to="home-care-services">
@@ -101,9 +101,14 @@ const Home: React.FC = () => {
 
       {/* Blue Section Divider */}
       <section className="bg-blue-900 text-white py-8">
-        <div ref={ref1} className={`container mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-center transition-opacity ease-in duration-1000 ${isVisible1 ? "opacity-100" : "opacity-0"}`}>
+        <div
+          ref={ref1}
+          className={`container mx-auto px-6 flex flex-col items-center md:flex-row md:justify-between transition-opacity ease-in duration-1000 ${
+            isVisible1 ? "opacity-100" : "opacity-0"
+          }`}
+        >
           <motion.p
-            className="text-lg md:w-2/3"
+            className="text-lg text-center md:text-left md:w-2/3 mb-4 md:mb-0"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
@@ -113,7 +118,7 @@ const Home: React.FC = () => {
 
           <motion.button
             onClick={() => setCalendlyOpen(true)} // Trigger Calendly modal
-            className="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium shadow-md"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium shadow-md mt-4 md:mt-0 md:ml-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -122,6 +127,7 @@ const Home: React.FC = () => {
           </motion.button>
         </div>
       </section>
+
 
       {/* Calendly Modal */}
       <PopupModal
@@ -175,45 +181,46 @@ const Home: React.FC = () => {
     </div>
 
     {/* Comprehensive In-Home Care Section */}
-    <div className={'bg-blue-200 py-12 px-12 rounded-lg'}>
+    <div className="bg-blue-200 py-12 px-4 sm:px-6 md:px-12 rounded-lg">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12">Comprehensive In-Home Care</h2>
-        <div ref={ref4} className={`md:flex md:justify-between md:items-center transition-opacity ease-in duration-700 ${isVisible4 ? "opacity-100" : "opacity-0"}`}>
-          <div className="md:w-1/2 mb-8 md:mb-0">
-            <h4 className="text-2xl font-bold mb-4 ml-10">Quality Assurance</h4>
-            <p className="text-gray-700 ml-10">
+
+        <div 
+          ref={ref4} 
+          className={`flex flex-col md:flex-row md:justify-between md:items-center transition-opacity ease-in duration-700 ${isVisible4 ? "opacity-100" : "opacity-0"}`}
+        >
+          {/* Quality Assurance Section */}
+          <div className="text-center md:text-left md:w-1/2 mb-8 md:mb-0">
+            <h4 className="text-2xl font-bold mb-4">Quality Assurance</h4>
+            <p className="text-gray-700 mx-auto md:ml-0 md:mr-8 max-w-md">
               At our home healthcare agency, we are committed to ensuring that every client receives personalized and high-quality care.
             </p>
           </div>
 
-          <div className="md:w-1/3 flex justify-center md:justify-end">
-            <img
-              src="/Images/transportation1.jpg"
-              alt="quality"
-              className="rounded-lg"
-            />
+          <div className="flex justify-center md:justify-end md:w-1/3">
+            <img src="/Images/transportation1.jpg" alt="Quality Assurance" className="rounded-lg w-full md:w-auto" />
           </div>
         </div>
 
-        <div ref={ref5} className={`mt-12 md:flex md:justify-between md:items-center bg-blue-50 p-8 mb-12 rounded-lg transition-opacity ease-in duration-1000 ${isVisible5 ? "opacity-100" : "opacity-0"}`}>
-          <div className="md:w-1/2">
-            <img
-              src="/Images/independent-client.png"
-              alt="How can I help you?"
-              className="rounded-lg"
-            />
+        {/* Compassionate Care Section */}
+        <div 
+          ref={ref5} 
+          className={`mt-12 flex flex-col md:flex-row md:justify-between md:items-center bg-blue-50 p-8 rounded-lg transition-opacity ease-in duration-1000 ${isVisible5 ? "opacity-100" : "opacity-0"}`}
+        >
+          <div className="flex justify-center md:w-1/2 mb-8 md:mb-0">
+            <img src="/Images/independent-client.png" alt="Compassionate Care" className="rounded-lg w-full md:w-auto" />
           </div>
 
-          <div className="md:w-1/2 md:pl-8 mt-8 md:mt-0">
-            <h4 className="text-2xl font-bold mb-4">Compassionate Care
-            </h4>
-            <p className="text-gray-700">
-              we are dedicated to delivering care with kindness and professionalism. Our team is committed to providing compassionate care that respects the dignity and individuality of each client.
+          <div className="text-center md:text-left md:w-1/2 md:pl-8">
+            <h4 className="text-2xl font-bold mb-4">Compassionate Care</h4>
+            <p className="text-gray-700 mx-auto md:ml-0 max-w-md">
+              We are dedicated to delivering care with kindness and professionalism. Our team is committed to providing compassionate care that respects the dignity and individuality of each client.
             </p>
           </div>
         </div>
       </div>
     </div>
+
 
     {/* Feedback Section */}
     <div className="mt-12 flex flex-col md:flex-row justify-between items-center">

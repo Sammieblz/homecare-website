@@ -118,17 +118,25 @@ export default function HomeCareServices() {
             </div>
           </div>
         </div>
-        <div className="card bg-white text-black flex-col items-center justify-center min-h-screen p-12">
-          <h5 className='text-black font-semibold p-2'>Click to see our BBB Rating & Accreditation</h5>
-          <a href="https://www.bbb.org/us/oh/cleveland/profile/home-care/oghosa-home-health-care-llc-0312-92018725" target="_blank" rel="noopener noreferrer" className="hover:underline">
-            <img src="/Images/bbb-logo1.png" alt="See Our Better Business Profile A+" className="w-40 h-auto" />
-            <div className="text-black">
+        <div className="card bg-white text-black flex flex-col items-center justify-center min-h-screen p-12">
+          <h5 className="text-black font-semibold p-2 text-center sm:text-center">
+            Click to see our BBB Rating & Accreditation
+          </h5>
+          
+          <a 
+            href="https://www.bbb.org/us/oh/cleveland/profile/home-care/oghosa-home-health-care-llc-0312-92018725" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hover:underline text-center flex flex-col items-center"
+          >
+            <img src="/Images/bbb-logo1.png" alt="See Our Better Business Profile A+" className="w-40 h-auto mb-4" />
+            <div className="text-black text-center">
               <span><strong>Accredited Since:</strong> 8/20/2016</span><br/>
               <span><strong>Years in Business:</strong> 11</span>
             </div>
-
           </a>
-      </div>
+        </div>
+
       </body>
       <Footer />
     </>
