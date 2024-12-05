@@ -51,7 +51,7 @@ export default function ContactUs() {
               <FaMapMarkerAlt className="text-blue-500 text-2xl" />
               <div>
                 <h4 className="text-lg font-semibold">Location</h4>
-                <p>25000 Euclid Ave #108, Euclid, OH 44117</p>
+                <p>26250 Euclid Ave suite 417, Euclid, OH 44132</p>
               </div>
             </div>
             <MapEmbed />
