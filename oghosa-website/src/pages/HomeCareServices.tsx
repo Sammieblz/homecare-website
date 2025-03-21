@@ -1,6 +1,7 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import '../styles/HomeCareServices.css'
+import { Link } from 'react-router-dom'
 
 export default function HomeCareServices() {
   return (
@@ -39,9 +40,9 @@ export default function HomeCareServices() {
             <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Every Service Offered</h2>
             <ul className="text-lg md:text-xl font-light">
               <li><a href="/home-care-services" className="hover:underline">Home Health Care</a></li>
-              <li><a href="/transport-services" className="hover:underline">Transportation Services</a></li>
-              <li><a href="/transport-services" className="hover:underline">Transportation for Development Disability</a></li>
-              <li><a href="/transport-services" className="hover:underline">Transportation for the Cleveland School District</a></li>
+              <li><a href="/transportation-services" className="hover:underline">Transportation Services</a></li>
+              <li><a href="/transportation-services" className="hover:underline">Transportation for Development Disability</a></li>
+              <li><a href="/transportation-services" className="hover:underline">Transportation for the Cleveland School District</a></li>
             </ul>
             <div className="flex-col justify-center mt-4">
               <h5 className='font-bold'>Newer Services offered</h5>
@@ -58,28 +59,38 @@ export default function HomeCareServices() {
         <div className="card bg-gradient-to-r from-blue-950 via-slate-700 to-slate-500 text-white flex items-center justify-center min-h-screen">
           <div className="max-w-2xl text-center px-6 py-12">
             <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Activity Day Center</h2>
-            <p className="text-lg md:text-xl mb-6 font-light">
-              OGHOSA Adult Day Activity Center provides a range of programs that enhance the care and support for each individual.
-            </p>
-            <p>Our Staff are driven by valued Person-centered thinking a set of core skills that our Service Providers uses to see 
+            <p className="mb-4">
+              Our Staff are driven by valued Person-centered thinking a set of core skills that our Service Providers uses to see 
               beyond a disability to support an individual in obtaining a life that he or she would like. Programming is hands-on, 
-              experiential, and intended to encourage "adulting" as well as creativity. Activities address critical life skills through 
-              the inclusion in community activities and opportunities to practice social skills, and appeal to member interests like art, 
-              science, economic development, technology, math and gardening.</p>
-            <div className="flex justify-center mt-4">
-              <img src="/Images/activity-center1.png" alt="Activity Day Center" className="w-full max-w-md rounded-lg shadow-lg" />
+              experiential, and intended to encourage "adulting" as well as creativity.
+            </p>
+            <div className="flex flex-col items-center mt-4">
+              <img 
+                src="/Images/activity-center1.png" 
+                alt="Activity Day Center" 
+                className="w-full max-w-md rounded-lg shadow-lg mb-4" 
+              />
+              <Link 
+                to="/activity-day-center" 
+                className="bg-white text-blue-900 px-6 py-3 rounded-full font-medium hover:bg-blue-100 transition-all duration-300 mt-2"
+              >
+                Learn More About Our Activity Center
+              </Link>
             </div>
           </div>
         </div>
         <div className="card bg-blue-800 text-white flex items-center justify-center min-h-screen">
           <div className="max-w-2xl text-center px-6 py-12">
             <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Companionship & Personal Care</h2>
-            <p className="text-lg md:text-xl mb-6 font-light">
-              Sometimes as people age, or if they become disabled, they can use assistance with day-to-day care tasks and often suffer from isolation and loneliness.
+            <p className="mb-5">
+              At Oghosa Home Health Care & Transportation, we offer companionship as well as help with personal care tasks such as bathing, dressing, grocery shopping, laundry, house cleaning, food preparation, and more.
             </p>
-            <p>At Oghosa Home Health Care & Transportation, we offer companionship as well as help with personal care tasks such as bathing, dressing, grocery shopping, laundry, house cleaning, food preparation, and more. </p>
             <div className="flex justify-center mt-4">
-              <img src="/Images/compasion.jpeg" alt="Activity Day Center" className="w-full max-w-md rounded-lg shadow-lg" />
+              <img 
+                src="/Images/compasion.jpeg" 
+                alt="Companionship & Personal Care" 
+                className="w-full max-w-md rounded-lg shadow-lg" 
+              />
             </div>
           </div>
         </div>
@@ -97,9 +108,6 @@ export default function HomeCareServices() {
         <div className="card bg-slate-400 text-white flex items-center justify-center min-h-screen">
           <div className="max-w-2xl text-black text-center px-6 py-12">
             <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Long-term and Short-term Care</h2>
-            <p className="text-lg md:text-xl mb-6 font-light">
-              We offer home care services on both a long-term and short-term basis. Whether you are looking for some help after a surgery, or you need a more permanent arrangement, we can help. 
-            </p>
             <p> Our experienced caregivers provide all the services you need to help our clients maintain as much independence as possible while providing them with the extra support they need.</p>
             <div className="flex justify-center mt-4">
               <img src="/Images/care.jpg" alt="Activity Day Center" className="w-full max-w-md rounded-lg shadow-lg" />
@@ -109,9 +117,6 @@ export default function HomeCareServices() {
         <div className="card bg-gray-800 text-white flex items-center justify-center min-h-screen">
           <div className="max-w-2xl text-white text-center px-6 py-12">
             <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Alzheimer's and Dementia Care</h2>
-            <p className="text-lg md:text-xl mb-6 font-light">
-              When a loved one has Alzheimer's or Dementia it can be hard for everyone. 
-            </p>
             <p> At Oghosa Home Health Care & Transportation, our caregivers are experienced and can help your loved one be safe, protected, and cared for in their home. Remaining at home for as long as possible is often best for elderly patients struggling with memory problems because the familiar surroundings help them feel safe.</p>
             <div className="flex justify-center mt-4">
               <img src="/Images/independent-client.png" alt="Activity Day Center" className="w-full max-w-md rounded-lg shadow-lg" />

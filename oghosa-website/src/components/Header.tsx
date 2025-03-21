@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { IconButton } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
 interface HeaderProps {
   logo: string;
@@ -26,108 +21,223 @@ const Header: React.FC<HeaderProps> = ({ logo }) => {
   };
 
   return (
-    <>
-      <header className="flex justify-between items-center h-20 bg-blue-900 text-white p-4 px-6 lg:px-16">
-        <div className="flex items-center">
+    <header className="flex justify-between items-center h-20 bg-blue-900 text-white p-4 px-6 lg:px-16">
+      {/* Logo */}
+      <div className="flex items-center">
+        <Link to="/">
           <img src={logo} alt="Oghosa" className="h-12 w-auto lg:h-20" />
-        </div>
+        </Link>
+      </div>
 
-        {/* Navigation Menu */}
-        <nav className="hidden md:flex flex-row items-center space-x-6">
-          <ul className="flex items-center space-x-6">
-            <li className={`${isHomePage ? 'active' : ''} hover:scale-105 transition-transform duration-300`}>
-              <Link to="/">Home</Link>
-            </li>
-            <li className="hover:scale-105 transition-transform duration-300">
-              <Link to="/about-us">About Us</Link>
-            </li>
-            <li className="relative">
-              <button onClick={toggleDropdown} className="flex items-center focus:outline-none">
-                Services
-                {isDropdownOpen ? (
-                  <ArrowDropUpIcon className="ml-1" />
-                ) : (
-                  <ArrowDropDownIcon className="ml-1" />
-                )}
-              </button>
-              {isDropdownOpen && (
-                <ul className="absolute left-0 top-10 bg-blue-800 rounded-md shadow-md w-48 p-2 z-50">
-                  <li className="px-4 py-2 hover:bg-blue-700 transition-colors">
-                    <Link to="/home-care-services">Home Care Services</Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-blue-700 transition-colors">
-                    <Link to="/transportation-services">Transportation Services</Link>
-                  </li>
-                </ul>
-              )}
-            </li>
-            <li className="hover:scale-105 transition-transform duration-300">
-              <Link to="/contact-us">Contact Us</Link>
-            </li>
-            <li>
-              <Link
-                to="/contact-us"
-                className="bg-white text-blue-900 px-4 py-2 rounded-md hover:bg-blue-400 hover:text-white hover:scale-105 transition-transform duration-300"
+      {/* Desktop Navigation - hidden on small screens */}
+      <nav className="hidden md:flex flex-row items-center space-x-6">
+        <ul className="flex items-center space-x-6">
+          <li className={`${isHomePage ? 'active' : ''} hover:scale-105 transition-transform duration-300`}>
+            <Link to="/">Home</Link>
+          </li>
+          <li className="hover:scale-105 transition-transform duration-300">
+            <Link to="/about-us">About Us</Link>
+          </li>
+          <li className="relative">
+            <button 
+              onClick={toggleDropdown} 
+              className="flex items-center focus:outline-none"
+            >
+              Services
+              <svg 
+                className={`ml-1 w-5 h-5 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24" 
+                xmlns="http://www.w3.org/2000/svg"
               >
-                Get Started
-              </Link>
-            </li>
-          </ul>
-        </nav>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {isDropdownOpen && (
+              <ul className="absolute left-0 top-10 bg-blue-800 rounded-md shadow-md w-48 p-2 z-50">
+                <li className="px-4 py-2 hover:bg-blue-700 transition-colors">
+                  <Link to="/home-care-services">Home Care Services</Link>
+                </li>
+                <li className="px-4 py-2 hover:bg-blue-700 transition-colors">
+                  <Link to="/transportation-services">Transportation Services</Link>
+                </li>
+                <li className="px-4 py-2 hover:bg-blue-700 transition-colors">
+                  <Link to="/activity-day-center">Activity Day Center</Link>
+                </li>
+              </ul>
+            )}
+          </li>
+          <li className="hover:scale-105 transition-transform duration-300">
+            <Link to="/contact-us">Contact Us</Link>
+          </li>
+          <li className="hover:scale-105 transition-transform duration-300">
+            <Link to="/faq">FAQ</Link>
+          </li>
+          <li>
+            <Link
+              to="/contact-us"
+              className="bg-white text-blue-900 px-4 py-2 rounded-md hover:bg-blue-400 hover:text-white hover:scale-105 transition-transform duration-300"
+            >
+              Get Started
+            </Link>
+          </li>
+        </ul>
+      </nav>
 
-        {/* Hamburger Icon for Mobile */}
-        <IconButton className="md:hidden text-white" onClick={toggleMenu}>
-          <MenuIcon fontSize="large" />
-        </IconButton>
+      {/* Mobile hamburger button - only visible on small screens */}
+      <button 
+        className="md:hidden text-white focus:outline-none" 
+        onClick={toggleMenu}
+        aria-label="Menu"
+      >
+        <svg 
+          className="w-8 h-8" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth={2} 
+            d="M4 6h16M4 12h16M4 18h16" 
+          />
+        </svg>
+      </button>
 
-        {/* Right-Side Overlay Menu */}
-        {isMenuOpen && (
-          <div className="fixed inset-y-0 right-0 w-3/4 max-w-xs bg-blue-900 bg-opacity-90 z-50 transform transition-transform duration-300 translate-x-0">
-            <IconButton 
-              className="absolute top-4 left-1/2 transform -translate-x-1/2 text-white" 
+      {/* Fullscreen Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-40 md:hidden flex flex-col backdrop-blur-sm bg-blue-900/90">
+          {/* Mobile header with close button */}
+          <div className="flex items-center justify-between p-4 border-b border-blue-800/50">
+            <div className="text-xl font-semibold">Menu</div>
+            <button 
               onClick={toggleMenu}
+              className="text-white p-2 focus:outline-none"
               aria-label="Close menu"
             >
-              <CloseIcon fontSize="large" />
-            </IconButton>
-            <ul className="flex flex-col items-start mt-20 space-y-6 pl-10 text-lg">
-              <li className="hover:scale-105 transition-transform duration-300">
-                <Link to="/" onClick={toggleMenu}>Home</Link>
+              <svg 
+                className="w-8 h-8" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M6 18L18 6M6 6l12 12" 
+                />
+              </svg>
+            </button>
+          </div>
+          
+          {/* Mobile menu links */}
+          <div className="flex-grow overflow-y-auto">
+            <ul className="flex flex-col px-4 space-y-4 pt-6 pb-6">
+              <li className="w-full">
+                <Link 
+                  to="/" 
+                  onClick={toggleMenu} 
+                  className="block w-full p-2 hover:bg-blue-700/70 rounded transition-colors"
+                >
+                  Home
+                </Link>
               </li>
-              <li className="hover:scale-105 transition-transform duration-300">
-                <Link to="/about-us" onClick={toggleMenu}>About Us</Link>
+              <li className="w-full">
+                <Link 
+                  to="/about-us" 
+                  onClick={toggleMenu} 
+                  className="block w-full p-2 hover:bg-blue-700/70 rounded transition-colors"
+                >
+                  About Us
+                </Link>
               </li>
-              <li className="relative hover:scale-105 transition-transform duration-300">
-                <button onClick={toggleDropdown} className="flex items-center focus:outline-none">
-                  Services
-                  {isDropdownOpen ? (
-                    <ArrowDropUpIcon className="ml-1 text-white" />
-                  ) : (
-                    <ArrowDropDownIcon className="ml-1 text-white" />
-                  )}
+              <li className="w-full">
+                <button 
+                  onClick={toggleDropdown} 
+                  className="flex items-center justify-between w-full p-2 hover:bg-blue-700/70 rounded transition-colors"
+                >
+                  <span>Services</span>
+                  <svg 
+                    className={`w-5 h-5 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </button>
                 {isDropdownOpen && (
-                  <ul className="bg-blue-800 rounded-md shadow-md w-full mt-2">
-                    <li className="px-4 py-2 hover:bg-blue-700 transition-colors">
-                      <Link to="/home-care-services" onClick={toggleMenu}>Home Care Services</Link>
+                  <ul className="mt-1 ml-3 space-y-2 border-l-2 border-blue-300/50 pl-3">
+                    <li>
+                      <Link 
+                        to="/home-care-services" 
+                        onClick={toggleMenu} 
+                        className="block p-2 hover:bg-blue-700/70 rounded transition-colors"
+                      >
+                        Home Care Services
+                      </Link>
                     </li>
-                    <li className="px-4 py-2 hover:bg-blue-700 transition-colors">
-                      <Link to="/transportation-services" onClick={toggleMenu}>Transportation Services</Link>
+                    <li>
+                      <Link 
+                        to="/transportation-services" 
+                        onClick={toggleMenu} 
+                        className="block p-2 hover:bg-blue-700/70 rounded transition-colors"
+                      >
+                        Transportation Services
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        to="/activity-day-center" 
+                        onClick={toggleMenu} 
+                        className="block p-2 hover:bg-blue-700/70 rounded transition-colors"
+                      >
+                        Activity Day Center
+                      </Link>
                     </li>
                   </ul>
                 )}
               </li>
-              <li className="hover:scale-105 transition-transform duration-300">
-                <Link to="/contact-us" onClick={toggleMenu}>Contact Us</Link>
+              <li className="w-full">
+                <Link 
+                  to="/contact-us" 
+                  onClick={toggleMenu} 
+                  className="block w-full p-2 hover:bg-blue-700/70 rounded transition-colors"
+                >
+                  Contact Us
+                </Link>
               </li>
-              <li className="bg-white text-blue-900 px-4 py-2 rounded-md hover:bg-blue-400 hover:text-white transition-transform duration-500">
-                <Link to="/contact-us" onClick={toggleMenu}>Get Started</Link>
+              <li className="w-full">
+                <Link 
+                  to="/faq" 
+                  onClick={toggleMenu} 
+                  className="block w-full p-2 hover:bg-blue-700/70 rounded transition-colors"
+                >
+                  FAQ
+                </Link>
               </li>
             </ul>
           </div>
-        )}
-      </header>
-    </>
+
+          {/* Get Started button fixed at the bottom */}
+          <div className="border-t border-blue-800/50 p-4 bg-blue-900/90 backdrop-blur-sm">
+            <Link
+              to="/contact-us"
+              onClick={toggleMenu}
+              className="block w-full bg-white text-blue-900 py-3 rounded-md text-center font-semibold hover:bg-gray-100 transition-colors shadow-md"
+            >
+              Get Started
+            </Link>
+          </div>
+        </div>
+      )}
+    </header>
   );
 };
 

@@ -1,0 +1,73 @@
+/* FAQ Page Styles */
+
+.prose {
+  line-height: 1.6;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+}
+
+.prose ul {
+  margin-bottom: 1rem;
+}
+
+/* Animation for accordion */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.prose {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Custom scrollbar for category navigation on small screens */
+.overflow-x-auto::-webkit-scrollbar {
+  height: 6px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: #b8b8b8;
+  border-radius: 10px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* Hover effects for buttons */
+button.hover\:bg-gray-300:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+/* Links in answers */
+.prose a {
+  color: #1e40af;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.prose a:hover {
+  text-decoration: underline;
+  color: #1e3a8a;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .prose {
+    font-size: 0.95rem;
+  }
+  
+  button span.font-medium {
+    font-size: 1rem;
+  }
+} 
