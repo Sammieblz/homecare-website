@@ -21,8 +21,10 @@ const Footer = () => {
             <li><a href="/" className="hover:underline">Home</a></li>
             <li><a href="/home-care-services" className="hover:underline">Home Care Services</a></li>
             <li><a href="/transportation-services" className="hover:underline">Transportation Services</a></li>
+            <li><a href="/activity-day-center" className="hover:underline">Activity Day Center</a></li>
             <li><a href="/about-us" className="hover:underline">About Us</a></li>
             <li><a href="/contact-us" className="hover:underline">Contact Us</a></li>
+            <li><a href="/faq" className="hover:underline">FAQ</a></li>
           </ul>
         </div>
 
@@ -32,6 +34,7 @@ const Footer = () => {
           <ul className="space-y-2">
             <li><a href="/home-care-services" className="hover:underline">Home Health Care</a></li>
             <li><a href="/transportation-services" className="hover:underline">Transportation Services</a></li>
+            <li><a href="/activity-day-center" className="hover:underline">Activity Day Center</a></li>
             <li><a href="/transportation-services#development-disability" className="hover:underline">Transportation for Development Disability</a></li>
             <li><a href="/transportation-services#cleveland-school" className="hover:underline">Transportation for Cleveland School District</a></li>
           </ul>

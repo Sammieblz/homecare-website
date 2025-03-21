@@ -9,6 +9,7 @@ import HealthCareImage from '/Images/nursing-home.png';
 import TransportationImage from '/Images/van.png';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+import { Helmet } from 'react-helmet';
 
 
 export function useIsVisible(ref: RefObject<HTMLElement>): boolean {
@@ -53,6 +54,58 @@ const Home: React.FC = () => {
   
   return (
     <>
+      <Helmet>
+        <title>Oghosa Home Health Care & Transportation | Euclid, Ohio</title>
+        <meta name="description" content="Oghosa provides compassionate in-home health care, transportation services, and adult day programs in Cleveland, Ohio. DODD-certified and family-owned." />
+        <meta name="keywords" content="home health care, transportation services, adult day program, developmental disabilities, Cleveland, Euclid, Ohio, DODD certified" />
+        <meta property="og:title" content="Oghosa Home Health Care & Transportation" />
+        <meta property="og:description" content="Compassionate home health care, transportation services, and adult day programs for individuals with developmental disabilities in Cleveland, Ohio." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://oghosahomecare.com/" />
+        <meta property="og:image" content="/Images/homepage.png" />
+        <link rel="canonical" href="https://oghosahomecare.com/" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Oghosa Home Health Care & Transportation",
+              "description": "Home health care, transportation services, and adult day programs",
+              "url": "https://oghosahomecare.com/",
+              "telephone": "+1-216-800-9152",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Euclid",
+                "addressLocality": "Cleveland",
+                "addressRegion": "OH",
+                "postalCode": "44117",
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 41.5932,
+                "longitude": -81.5267
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday"
+                ],
+                "opens": "09:00",
+                "closes": "17:00"
+              },
+              "sameAs": [
+                "https://www.facebook.com/OghosaHomeHealthCareLLC/",
+                "https://www.google.com/search?q=oghosa+home+care+euclid"
+              ]
+            }
+          `}
+        </script>
+      </Helmet>
       <Header logo="/Images/ogosa-logo-nobg.png" />
       <section className="relative h-screen">
         {/* Background Image */}
@@ -159,7 +212,7 @@ const Home: React.FC = () => {
     {/* Our Services Section */}
     <div ref={ref3} className={`text-center mb-12 transition-opacity ease-in duration-700 ${isVisible3 ? "opacity-100" : "opacity-0"}`}>
       <h2 className="text-3xl font-bold mb-8">Our Services Include</h2>
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {/* Card 1 */}
         <a href="/home-care-services" className="bg-gray-100 p-6 rounded-lg shadow-md flex items-start transform hover:scale-105 transition-transform duration-300">
           <img src={HealthCareImage} alt="Home Health Care" className="w-16 h-16 mr-4 rounded-full" />
@@ -175,6 +228,15 @@ const Home: React.FC = () => {
           <div>
             <h3 className="text-xl font-bold mb-2">Transportation Services</h3>
             <p className="text-lg">Our vehicles are well maintained to ensure your complete satisfaction. We go the extra mile to satisfy the needs of our clients and their families.</p>
+          </div>
+        </a>
+
+        {/* Card 3 - Activity Day Center */}
+        <a href="/activity-day-center" className="bg-gray-100 p-6 rounded-lg shadow-md flex items-start transform hover:scale-105 transition-transform duration-300">
+          <img src="/Images/activity-center1.png" alt="Activity Day Center" className="w-16 h-16 mr-4 rounded-full object-cover" />
+          <div>
+            <h3 className="text-xl font-bold mb-2">Activity Day Center</h3>
+            <p className="text-lg">Our Adult Day Program provides person-centered activities and life skills training in a supportive environment.</p>
           </div>
         </a>
       </div>
@@ -221,6 +283,74 @@ const Home: React.FC = () => {
       </div>
     </div>
 
+    {/* Activity Day Program Feature Section */}
+    <div className="mt-16 mb-16">
+      <div className="container mx-auto px-6">
+        <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl overflow-hidden shadow-xl">
+          <div className="flex flex-col lg:flex-row">
+            {/* Image Column */}
+            <div className="lg:w-1/2">
+              <img 
+                src="/Images/IMG_0182.jpg" 
+                alt="Oghosa Activity Day Center participants engaged in enriching activities" 
+                className="w-full h-full object-cover" 
+              />
+            </div>
+            
+            {/* Content Column */}
+            <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+              <h2 className="text-3xl font-bold text-blue-900 mb-4">
+                Discover Our Activity Day Program
+              </h2>
+              <p className="text-lg mb-6">
+                Our Adult Day Program provides person-centered activities, life skills training, and 
+                socialization opportunities for adults with developmental disabilities in a supportive, 
+                engaging environment. We focus on enhancing independence, building confidence, and 
+                improving quality of life through structured activities and individualized care.
+              </p>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start">
+                  <svg className="w-6 h-6 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <p>Engaging recreational and educational activities</p>
+                </div>
+                <div className="flex items-start">
+                  <svg className="w-6 h-6 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <p>Skill development in a supportive social environment</p>
+                </div>
+                <div className="flex items-start">
+                  <svg className="w-6 h-6 text-green-600 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <p>Transportation to and from our center available</p>
+                </div>
+              </div>
+
+              <Link
+                to="/activity-day-center"
+                className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-md shadow-md transition-all transform hover:scale-105 hover:shadow-lg"
+              >
+                Explore Our Activity Day Center
+              </Link>
+            </div>
+          </div>
+        </div>
+        
+        {/* Hidden SEO-friendly content */}
+        <div className="hidden">
+          <h2>Oghosa Adult Day Program in Cleveland, Ohio</h2>
+          <p>
+            Adult day program services for individuals with developmental disabilities in Cleveland, 
+            Ohio. DODD-certified day program offering socialization, recreation, and life skills training.
+            Structured activities, community integration, and person-centered care in Euclid, OH.
+          </p>
+        </div>
+      </div>
+    </div>
 
     {/* Feedback Section */}
     <div className="mt-12 flex flex-col md:flex-row justify-between items-center">

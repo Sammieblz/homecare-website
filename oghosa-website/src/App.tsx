@@ -6,6 +6,8 @@ import HomeCareServices from './pages/HomeCareServices';
 import ContactUs from './pages/ContactUs';
 import AboutUs from './pages/AboutUs';
 import TransportationServices from './pages/TransportationServices';
+import ActivityDayCenter from './pages/ActivityDayCenter';
+import FAQ from './pages/FAQ';
 import './App.css';
 
 const App: React.FC = () => {
@@ -20,6 +22,8 @@ const App: React.FC = () => {
             <Route path="/transportation-services" element={<TransportationServices />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/activity-day-center" element={<ActivityDayCenter />} />
+            <Route path="/faq" element={<FAQ />} />
           </Routes>
           <Analytics />
       </div>
