@@ -1,0 +1,24 @@
+/*
+  Oghosa brand palette, sampled from public logo PNGs (scripts/sample-brand-colors.mjs):
+  - oghosa-logo1.png / oghosa-logo2.png: dominant dark panel #2a4e78
+  - ogosa-logo-nobg.png: dominant wordmark / accent blue #4e90c6
+  Tweak hex here to adjust the whole site (Tailwind theme.colors.brand maps to these).
+*/
+:root {
+  --brand-50: #f2f7fc;
+  --brand-100: #dce9f7;
+  --brand-200: #b8d4ee;
+  --brand-300: #8bb8e0;
+  --brand-400: #6ba3d4;
+  --brand-500: #4e90c6;
+  --brand-600: #3d7aaf;
+  --brand-700: #2f5f8f;
+  --brand-800: #2a4e78;
+  --brand-900: #1e3654;
+  --brand-950: #152a40;
+
+  /* Semantic shortcuts */
+  --brand-chrome: var(--brand-800);
+  --brand-accent: var(--brand-500);
+  --brand-ink: var(--brand-950);
+}

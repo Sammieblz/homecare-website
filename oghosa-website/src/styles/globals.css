@@ -1,19 +1,22 @@
-﻿/* Premium-editorial foundation.
-   Keep existing Tailwind colors (blue-900, blue-600, gray-*, etc.). */
+﻿/* Premium-editorial foundation. Body ink uses brand scale (see brand.css). */
 
 :root {
-  --ink: #0f172a;
+  --ink: var(--brand-950, #152a40);
   --paper: #ffffff;
   --paper-muted: #f8fafc;
-  --hairline: rgba(15, 23, 42, 0.10);
+  /* Matches brand-950 @ 12% opacity; avoids color-mix gaps on older engines */
+  --hairline: rgba(21, 42, 64, 0.12);
 }
 
 html {
   scroll-behavior: smooth;
+  min-width: 0;
 }
 
 body {
+  min-width: 0;
   font-family: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  color: #152a40;
   color: var(--ink);
   background: var(--paper);
   text-rendering: optimizeLegibility;

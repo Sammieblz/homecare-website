@@ -1,3 +1,18 @@
+.App {
+  min-width: 0;
+  overflow-x: clip;
+}
+
+/*
+  MobileStickyCTA is fixed to the bottom (md:hidden). Without this, the last
+  viewport of scrollable content, especially the footer, sits under the bar.
+  Keep in sync with button min-height + vertical padding in MobileStickyCTA.tsx.
+*/
+@media (max-width: 767px) {
+  .App {
+    padding-bottom: max(5.75rem, calc(4.75rem + env(safe-area-inset-bottom)));
+  }
+}
 
 .fade-in {
   animation: fadeIn 1.5s ease-in-out;

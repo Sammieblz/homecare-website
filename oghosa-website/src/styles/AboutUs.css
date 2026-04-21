@@ -1,80 +1,153 @@
+.about-us {
+  min-width: 0;
+}
+
+/* Fallback behind parallax img so letterboxing never reads as light gray */
+.about-us .parallax-banner,
+.about-us .parallax-divider {
+  background-color: var(--brand-900);
+}
+
 .about-us .overlay {
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-  
-  .banner-title {
-    font-size: 3rem;
-    font-weight: 700;
-    color: white;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-    animation: fadeInDown 1s ease-out;
-  }
-  
-  .story-section {
-    animation: fadeIn 1.2s ease-in-out;
-  }
-  
-  .values-section {
-    animation: fadeInUp 1.2s ease-out;
-  }
-  
-  .value-card {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .value-card:hover {
+  /* Keep in sync with .parallax-banner min-height at each breakpoint */
+  min-height: min(56vh, 500px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+}
+
+.about-us .banner-title {
+  font-size: clamp(1.75rem, 4vw + 0.75rem, 3rem);
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  line-height: 1.1;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  animation: fadeInDown 1s ease-out;
+  max-width: min(100%, 20ch);
+  margin: 0 auto;
+}
+
+.about-us .story-section {
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.about-us .values-section {
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.about-us .value-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 0;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .about-us .value-card:hover {
     transform: translateY(-5px);
     box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
   }
+}
 
-  .cool-button {
-    background-color: #1e3a8a;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 25px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .cool-button:hover {
-    background-color: #0056b3;
-  }
-  
+.about-us .cool-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--brand-900);
+  color: white;
+  padding: 0.875rem 1.5rem;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  max-width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
 
-  
-  
-  @media (max-width: 768px) {
-    .about-us .overlay {
-        height: 50vh;
-        display: flex;
-    }
-    .parallax-banner {
-      height: 30vh; 
-    }
-  
-    .banner-title {
-      font-size: 2.5rem;
-    }
+.about-us .cool-button:hover {
+  background-color: var(--brand-600);
+}
+
+.about-us .parallax-banner {
+  min-height: min(56vh, 500px);
+}
+
+.about-us .parallax-divider {
+  min-height: min(34vh, 300px);
+}
+
+.about-us .divider-content {
+  min-height: min(34vh, 300px);
+}
+
+@media (max-width: 768px) {
+  .about-us .overlay {
+    min-height: min(44vh, 380px);
   }
-  
-  @media (max-width: 480px) {
-    .about-us .overlay {
-        height: 30vh;
-        display: flex;
-    }
-    .parallax-banner {
-      height: 25vh; 
-    }
-  
-    .banner-title {
-      font-size: 2rem;
-    }
+
+  .about-us .parallax-banner {
+    min-height: min(44vh, 380px);
   }
-  
+
+  .about-us .parallax-divider,
+  .about-us .divider-content {
+    min-height: min(30vh, 260px);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us .overlay {
+    min-height: min(38vh, 300px);
+  }
+
+  .about-us .parallax-banner {
+    min-height: min(38vh, 300px);
+  }
+
+  .about-us .parallax-divider,
+  .about-us .divider-content {
+    min-height: min(26vh, 220px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-us .banner-title {
+    animation: none;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

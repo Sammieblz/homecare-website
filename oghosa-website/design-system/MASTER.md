@@ -2,7 +2,7 @@
 
 **Rule 1: Colors do not change.** Keep the existing palette already used across the site (Tailwind `blue-*`, `gray-*`, `white`).
 
-This redesign comes from **typography, spacing, hierarchy, and composition** — not new gradients or new brand colors.
+This redesign comes from **typography, spacing, hierarchy, and composition**, not new gradients or new brand colors.
 
 ## Typography
 
