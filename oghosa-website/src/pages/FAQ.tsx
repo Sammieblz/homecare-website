@@ -246,7 +246,7 @@ const FAQ: React.FC = () => {
     return () => {
       document.head.removeChild(script);
     };
-  }, []);
+  }, [faqItems]);
 
   const toggleFAQ = (index: number) => {
     setFaqItems(prevItems => 
@@ -294,10 +294,10 @@ const FAQ: React.FC = () => {
 
       <Header logo="/Images/ogosa-logo-nobg.png" />
       
-      <div className="bg-gray-50 py-10">
-        <div className="container mx-auto px-4 md:px-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-4">Frequently Asked Questions</h1>
-          <p className="text-lg text-center text-gray-700 mb-10 max-w-3xl mx-auto">
+      <div className="bg-white py-12 border-b border-slate-200/70">
+        <div className="mx-auto max-w-7xl px-6 lg:px-16">
+          <h1 className="font-display text-3xl md:text-4xl font-semibold text-center text-blue-900 mb-4">Frequently Asked Questions</h1>
+          <p className="font-body text-lg text-center text-slate-700 mb-10 max-w-3xl mx-auto">
             Find answers to common questions about our home health care, transportation services, 
             and adult day program in Cleveland, Ohio.
           </p>
@@ -309,7 +309,7 @@ const FAQ: React.FC = () => {
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`px-4 py-2 rounded-full text-sm md:text-base whitespace-nowrap transition-colors ${
+                  className={`font-body px-4 py-2 rounded-full text-sm md:text-base whitespace-nowrap transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
                     activeCategory === category.id
                       ? 'bg-blue-800 text-white'
                       : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
@@ -326,7 +326,7 @@ const FAQ: React.FC = () => {
             {filteredFAQs.map((item, index) => (
               <div key={index} className="mb-4">
                 <button
-                  className={`w-full text-left p-5 rounded-lg flex justify-between items-center transition-colors ${
+                  className={`font-body w-full text-left p-5 rounded-lg flex justify-between items-center transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
                     item.isOpen ? 'bg-blue-800 text-white' : 'bg-white text-blue-900 hover:bg-gray-100'
                   }`}
                   onClick={() => toggleFAQ(faqItems.indexOf(item))}
@@ -349,21 +349,21 @@ const FAQ: React.FC = () => {
           </div>
           
           {/* Contact CTA */}
-          <div className="text-center mt-12 p-8 bg-blue-50 rounded-lg shadow-md max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-blue-900 mb-4">Still Have Questions?</h2>
-            <p className="text-lg text-gray-700 mb-6">
+          <div className="text-center mt-12 p-8 bg-blue-50 rounded-lg shadow-sm border border-slate-200 max-w-4xl mx-auto">
+            <h2 className="font-display text-2xl font-semibold text-blue-900 mb-4">Still Have Questions?</h2>
+            <p className="font-body text-lg text-slate-700 mb-6">
               Our team is ready to assist you with any questions about our services or how we can help you or your loved one.
             </p>
             <div className="flex flex-col md:flex-row justify-center gap-4">
               <Link
                 to="/contact-us"
-                className="bg-blue-800 hover:bg-blue-900 text-white px-6 py-3 rounded-md font-medium transition-colors"
+                className="font-body inline-flex min-h-[44px] items-center justify-center bg-blue-800 hover:bg-blue-900 text-white px-6 py-3 rounded-md font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
               >
                 Contact Us
               </Link>
               <a
                 href="tel:2162610880"
-                className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-md font-medium transition-colors"
+                className="font-body inline-flex min-h-[44px] items-center justify-center bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-md font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
               >
                 Call (216) 261-0880
               </a>
@@ -377,4 +377,5 @@ const FAQ: React.FC = () => {
   );
 };
 
-export default FAQ; 
+// eslint-disable-next-line react-refresh/only-export-components
+export default FAQ;

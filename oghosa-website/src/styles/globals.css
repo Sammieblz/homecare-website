@@ -1,0 +1,45 @@
+﻿/* Premium-editorial foundation.
+   Keep existing Tailwind colors (blue-900, blue-600, gray-*, etc.). */
+
+:root {
+  --ink: #0f172a;
+  --paper: #ffffff;
+  --paper-muted: #f8fafc;
+  --hairline: rgba(15, 23, 42, 0.10);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Fraunces, ui-serif, Georgia, serif;
+  letter-spacing: -0.01em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

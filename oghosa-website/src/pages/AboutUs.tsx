@@ -8,7 +8,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 
-export function useIsVisible(ref: RefObject<HTMLElement>): boolean {
+function useIsVisible(ref: RefObject<HTMLElement>): boolean {
   const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(() => {

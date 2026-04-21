@@ -7,11 +7,11 @@ export default function HomeCareServices() {
   return (
     <>
       <div className="home-care-services"><Header logo="/Images/ogosa-logo-nobg.png" /></div>
-      <body>
+      <main>
         <div className="card bg-blue-900 text-white flex items-center justify-center min-h-screen">
           <div className="text-center px-6 py-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Oghosa Services for New Clients</h1>
-            <p className="text-lg md:text-xl mb-6">
+            <h1 className="font-display text-4xl md:text-5xl font-semibold mb-4">Oghosa Services for New Clients</h1>
+            <p className="font-body text-lg md:text-xl mb-6 text-white/90">
               At Oghosa Homecare and Transportation Services, we pride ourselves on providing the highest 
               quality of personalized in-home care to our clients and their families with compassion and respect, 
               recognizing the valuable relationship with our caregivers and communities we serve.
@@ -25,11 +25,13 @@ export default function HomeCareServices() {
         
         <div className="card bg-slate-200 text-black flex items-center justify-center min-h-screen">
           <div className="max-w-2xl text-center px-6 py-12">
-            <h2 className="text-black text-3xl md:text-4xl font-extrabold mb-4">Home Health Care & Transportation Services</h2>
-            <p className="text-black text-lg md:text-xl mb-6 font-medium">
+            <h2 className="font-display text-black text-3xl md:text-4xl font-semibold mb-4">Home Health Care & Transportation Services</h2>
+            <p className="font-body text-black text-lg md:text-xl mb-6 font-medium">
               Our staff consists of a multidisciplinary team of DSP and ISP providers to meet the diverse needs of our participants.
             </p>
-            <p className="text-black text-lg md:text-xl mb-6 font-medium">Our Staff are driven by valued Person-centered thinking a set of core skills that our Service Providers uses to see beyond a disability to support an individual in obtaining a life that he or she would like. </p>
+            <p className="font-body text-black text-lg md:text-xl mb-6 font-medium">
+              Our Staff are driven by valued Person-centered thinking a set of core skills that our Service Providers uses to see beyond a disability to support an individual in obtaining a life that he or she would like.
+            </p>
             <div className="flex justify-center mt-4">
               <img src="/Images/caregiver1.jpg" alt="Home Health Care" className="w-full max-w-md rounded-lg shadow-lg" />
             </div>
@@ -58,8 +60,8 @@ export default function HomeCareServices() {
         </div>
         <div className="card bg-gradient-to-r from-blue-950 via-slate-700 to-slate-500 text-white flex items-center justify-center min-h-screen">
           <div className="max-w-2xl text-center px-6 py-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Activity Day Center</h2>
-            <p className="mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold mb-4">Activity Day Center</h2>
+            <p className="font-body mb-4 text-white/90">
               Our Staff are driven by valued Person-centered thinking a set of core skills that our Service Providers uses to see 
               beyond a disability to support an individual in obtaining a life that he or she would like. Programming is hands-on, 
               experiential, and intended to encourage "adulting" as well as creativity.
@@ -72,7 +74,7 @@ export default function HomeCareServices() {
               />
               <Link 
                 to="/activity-day-center" 
-                className="bg-white text-blue-900 px-6 py-3 rounded-full font-medium hover:bg-blue-100 transition-all duration-300 mt-2"
+                className="font-body inline-flex min-h-[44px] items-center justify-center bg-white text-blue-900 px-6 py-3 rounded-full font-semibold hover:bg-blue-100 transition-colors duration-200 mt-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
               >
                 Learn More About Our Activity Center
               </Link>
@@ -142,7 +144,7 @@ export default function HomeCareServices() {
           </a>
         </div>
 
-      </body>
+      </main>
       <Footer />
     </>
   )

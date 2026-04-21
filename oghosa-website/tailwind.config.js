@@ -5,13 +5,14 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        display: ["Fraunces", "ui-serif", "Georgia", "serif"],
+        body: ["Source Sans 3", "ui-sans-serif", "system-ui", "sans-serif"],
+      },
+    },
   },
-  plugins: [
-    require('tailwindcss'),
-    require('autoprefixer'),
-    require('framer-motion'),
-  ],
+  plugins: [],
 }
 
 

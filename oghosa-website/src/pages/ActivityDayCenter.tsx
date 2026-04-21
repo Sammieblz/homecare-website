@@ -38,9 +38,6 @@ const ActivityDayCenter: React.FC = () => {
   const ref3 = useRef<HTMLDivElement>(null);
   const isVisible3 = useIsVisible(ref3);
 
-  const ref4 = useRef<HTMLDivElement>(null);
-  const isVisible4 = useIsVisible(ref4);
-
   // SEO-focused useEffect to add JSON-LD structured data
   useEffect(() => {
     // Create the JSON-LD script element for rich results
@@ -85,18 +82,6 @@ const ActivityDayCenter: React.FC = () => {
       document.head.removeChild(script);
     };
   }, []);
-
-  // Gallery images
-  const galleryImages = [
-    { src: '/Images/IMG_7658.png', alt: 'Activity Day Center' },
-    { src: '/Images/IMG_1131.png', alt: 'Activities at Center' },
-    { src: '/Images/IMG_3625.png', alt: 'Healthcare Activities' },
-    { src: '/Images/IMG_3630.png', alt: 'Compassionate Care' },
-    { src: '/Images/IMG_3624.png', alt: 'Empowering Activities' },
-    { src: '/Images/IMG_7910.png', alt: 'Care Services' },
-    { src: '/Images/IMG_5457.png', alt: 'Quality Care' },
-    { src: '/Images/IMG_2050.png', alt: 'Independent Client Activities' },
-  ];
 
   // Activities offered
   const activities = [
@@ -256,22 +241,6 @@ const ActivityDayCenter: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold mb-2 text-blue-800">{activity.title}</h3>
               <p className="text-gray-700">{activity.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Gallery Section */}
-      <div ref={ref4} className={`gallery-section py-16 px-8 bg-gray-100 transition-opacity ease-in duration-1000 ${isVisible4 ? "opacity-100" : "opacity-0"}`}>
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Gallery</h2>
-        <div className="gallery-grid max-w-6xl mx-auto">
-          {galleryImages.map((image, index) => (
-            <div key={index} className="gallery-item">
-              <img 
-                src={image.src} 
-                alt={image.alt} 
-                className="rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105"
-              />
             </div>
           ))}
         </div>

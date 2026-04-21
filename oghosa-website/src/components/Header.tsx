@@ -21,27 +21,43 @@ const Header: React.FC<HeaderProps> = ({ logo }) => {
   };
 
   return (
-    <header className="flex justify-between items-center h-20 bg-blue-900 text-white p-4 px-6 lg:px-16">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-blue-900/95 text-white backdrop-blur">
       {/* Logo */}
-      <div className="flex items-center">
-        <Link to="/">
-          <img src={logo} alt="Oghosa" className="h-12 w-auto lg:h-20" />
-        </Link>
-      </div>
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-16">
+        <div className="flex items-center">
+          <Link
+            to="/"
+            className="rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-900"
+          >
+            <img src={logo} alt="Oghosa" className="h-12 w-auto lg:h-20" />
+          </Link>
+        </div>
 
       {/* Desktop Navigation - hidden on small screens */}
-      <nav className="hidden md:flex flex-row items-center space-x-6">
+      <nav className="hidden md:flex flex-row items-center space-x-6" aria-label="Main">
         <ul className="flex items-center space-x-6">
-          <li className={`${isHomePage ? 'active' : ''} hover:scale-105 transition-transform duration-300`}>
-            <Link to="/">Home</Link>
+          <li className={`${isHomePage ? 'active' : ''}`}>
+            <Link
+              to="/"
+              className="font-body text-sm font-medium tracking-wide text-white/90 transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-sm"
+            >
+              Home
+            </Link>
           </li>
-          <li className="hover:scale-105 transition-transform duration-300">
-            <Link to="/about-us">About Us</Link>
+          <li>
+            <Link
+              to="/about-us"
+              className="font-body text-sm font-medium tracking-wide text-white/90 transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-sm"
+            >
+              About Us
+            </Link>
           </li>
           <li className="relative">
             <button 
               onClick={toggleDropdown} 
-              className="flex items-center focus:outline-none"
+              className="flex items-center font-body text-sm font-medium tracking-wide text-white/90 transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-sm cursor-pointer"
+              aria-expanded={isDropdownOpen}
+              aria-haspopup="true"
             >
               Services
               <svg 
@@ -55,7 +71,7 @@ const Header: React.FC<HeaderProps> = ({ logo }) => {
               </svg>
             </button>
             {isDropdownOpen && (
-              <ul className="absolute left-0 top-10 bg-blue-800 rounded-md shadow-md w-48 p-2 z-50">
+              <ul className="absolute left-0 top-10 bg-blue-800 rounded-md shadow-md w-56 p-2 z-50 border border-white/10">
                 <li className="px-4 py-2 hover:bg-blue-700 transition-colors">
                   <Link to="/home-care-services">Home Care Services</Link>
                 </li>
@@ -68,16 +84,26 @@ const Header: React.FC<HeaderProps> = ({ logo }) => {
               </ul>
             )}
           </li>
-          <li className="hover:scale-105 transition-transform duration-300">
-            <Link to="/contact-us">Contact Us</Link>
+          <li>
+            <Link
+              to="/contact-us"
+              className="font-body text-sm font-medium tracking-wide text-white/90 transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-sm"
+            >
+              Contact Us
+            </Link>
           </li>
-          <li className="hover:scale-105 transition-transform duration-300">
-            <Link to="/faq">FAQ</Link>
+          <li>
+            <Link
+              to="/faq"
+              className="font-body text-sm font-medium tracking-wide text-white/90 transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-sm"
+            >
+              FAQ
+            </Link>
           </li>
           <li>
             <Link
               to="/contact-us"
-              className="bg-white text-blue-900 px-4 py-2 rounded-md hover:bg-blue-400 hover:text-white hover:scale-105 transition-transform duration-300"
+              className="font-body inline-flex min-h-[44px] items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-blue-900 shadow-sm transition-colors hover:bg-blue-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-900"
             >
               Get Started
             </Link>
@@ -87,7 +113,7 @@ const Header: React.FC<HeaderProps> = ({ logo }) => {
 
       {/* Mobile hamburger button - only visible on small screens */}
       <button 
-        className="md:hidden text-white focus:outline-none" 
+        className="md:hidden text-white focus:outline-none min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded-md focus-visible:ring-2 focus-visible:ring-white/60 cursor-pointer"
         onClick={toggleMenu}
         aria-label="Menu"
       >
@@ -142,7 +168,7 @@ const Header: React.FC<HeaderProps> = ({ logo }) => {
                 <Link 
                   to="/" 
                   onClick={toggleMenu} 
-                  className="block w-full p-2 hover:bg-blue-700/70 rounded transition-colors"
+                  className="font-body block w-full rounded-md p-3 hover:bg-blue-700/70 transition-colors focus-visible:ring-2 focus-visible:ring-white/60"
                 >
                   Home
                 </Link>
@@ -151,7 +177,7 @@ const Header: React.FC<HeaderProps> = ({ logo }) => {
                 <Link 
                   to="/about-us" 
                   onClick={toggleMenu} 
-                  className="block w-full p-2 hover:bg-blue-700/70 rounded transition-colors"
+                  className="font-body block w-full rounded-md p-3 hover:bg-blue-700/70 transition-colors focus-visible:ring-2 focus-visible:ring-white/60"
                 >
                   About Us
                 </Link>
@@ -208,7 +234,7 @@ const Header: React.FC<HeaderProps> = ({ logo }) => {
                 <Link 
                   to="/contact-us" 
                   onClick={toggleMenu} 
-                  className="block w-full p-2 hover:bg-blue-700/70 rounded transition-colors"
+                  className="font-body block w-full rounded-md p-3 hover:bg-blue-700/70 transition-colors focus-visible:ring-2 focus-visible:ring-white/60"
                 >
                   Contact Us
                 </Link>
@@ -217,7 +243,7 @@ const Header: React.FC<HeaderProps> = ({ logo }) => {
                 <Link 
                   to="/faq" 
                   onClick={toggleMenu} 
-                  className="block w-full p-2 hover:bg-blue-700/70 rounded transition-colors"
+                  className="font-body block w-full rounded-md p-3 hover:bg-blue-700/70 transition-colors focus-visible:ring-2 focus-visible:ring-white/60"
                 >
                   FAQ
                 </Link>
@@ -230,13 +256,14 @@ const Header: React.FC<HeaderProps> = ({ logo }) => {
             <Link
               to="/contact-us"
               onClick={toggleMenu}
-              className="block w-full bg-white text-blue-900 py-3 rounded-md text-center font-semibold hover:bg-gray-100 transition-colors shadow-md"
+              className="font-body block w-full bg-white text-blue-900 py-3 rounded-md text-center font-semibold hover:bg-blue-100 transition-colors shadow-md focus-visible:ring-2 focus-visible:ring-white/60"
             >
               Get Started
             </Link>
           </div>
         </div>
       )}
+      </div>
     </header>
   );
 };

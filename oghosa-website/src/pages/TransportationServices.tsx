@@ -29,28 +29,30 @@ const TransportationServices = () => {
     <> 
       <Header logo="/Images/ogosa-logo-nobg.png" /> 
       <section className="transportation-section"> 
+        <div className="mx-auto max-w-7xl px-6 lg:px-16 w-full">
         <Van className="van-animation" /> 
         <motion.div className="content" variants={containerVariants} initial="initial" animate="animate"> 
-          <motion.h1 className="title" variants={textVariants}> 
+          <motion.h1 className="title font-display" variants={textVariants}> 
             Reliable and Safe Transportation Services 
           </motion.h1> 
-          <motion.p className="description" variants={textVariants}> 
+          <motion.p className="description font-body" variants={textVariants}> 
             OGHOSA owns and operates a fleet of vehicles offering door-to-door transportation to community activities. 
             Drivers are carefully vetted and consistent, ensuring individual needs are met. Our services cover the Greater Cleveland Area, Cuyahoga County, and Lake County. 
           </motion.p> 
-          <motion.p className="description" variants={textVariants}> 
+          <motion.p className="description font-body" variants={textVariants}> 
             Our staff is dedicated to making client care our top priority. Our vehicles are well-maintained to ensure safety and satisfaction. We go the extra mile to meet the needs of our clients and their families. 
           </motion.p> 
-          <motion.p className="description" variants={textVariants}> 
+          <motion.p className="description font-body" variants={textVariants}> 
             Whether it's a scheduled medical appointment or a spontaneous outing, OGHOSA provides reliable and accessible transportation to help our clients stay connected with their communities. 
           </motion.p> 
-          <motion.p className="description" variants={textVariants}> 
+          <motion.p className="description font-body" variants={textVariants}> 
             We are committed to comfort and safety on every ride, ensuring you reach your destination on time, every time. 
           </motion.p> 
           <Link to="/contact-us" className="contact-button">
             <span>Contact Us</span>
           </Link>
         </motion.div> 
+        </div>
       </section> 
       <Footer />
     </> 

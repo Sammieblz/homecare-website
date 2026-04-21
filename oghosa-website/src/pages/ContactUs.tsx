@@ -9,21 +9,24 @@ export default function ContactUs() {
   return (
     <>
       <Header logo="/Images/ogosa-logo-nobg.png" />
-      <section className="bg-gray-100 p-8 flex flex-col lg:flex-row items-center lg:items-start space-y-8 lg:space-y-0 lg:space-x-16 animate-fade-in">
+      <section className="bg-white border-b border-slate-200/70">
+        <div className="mx-auto max-w-7xl px-6 py-12 lg:px-16 lg:py-14">
+          <div className="flex flex-col lg:flex-row lg:items-start gap-10 lg:gap-14">
         {/* Form Section */}
-        <div className="w-full lg:w-1/2 bg-white shadow-lg rounded-lg p-6 transform hover:scale-105 transition duration-500 ease-in-out">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-6">Contact Us</h2>
+        <div className="w-full lg:w-1/2 bg-white shadow-sm border border-slate-200 rounded-xl p-7">
+          <h1 className="font-display text-3xl md:text-4xl font-semibold text-center text-blue-900 mb-3">Contact Us</h1>
+          <p className="font-body text-center text-slate-700 mb-6">Send a message and we’ll respond as soon as we can.</p>
           <Form />
         </div>
 
         {/* Information Section */}
         <div className="w-full lg:w-1/2 space-y-6">
           {/* Help Section */}
-          <div className="bg-white shadow-lg rounded-lg p-6 flex items-start space-x-4 transform hover:scale-105 transition duration-500 ease-in-out">
+          <div className="bg-white shadow-sm border border-slate-200 rounded-xl p-6 flex items-start space-x-4">
             <FaPhone className="text-blue-500 text-2xl" />
             <div>
-              <h4 className="text-lg font-semibold">We are here to help.</h4>
-              <p>Our team is available to answer any questions you may have.</p>
+              <h2 className="font-display text-lg font-semibold text-slate-900">We are here to help.</h2>
+              <p className="font-body text-slate-700">Our team is available to answer any questions you may have.</p>
               <p>
                 Phone: <a href="tel:2162610880" className="text-blue-500 hover:underline">216-261-0880</a> or{' '}
                 <a href="tel:2162358774" className="text-blue-500 hover:underline">216-235-8774</a>
@@ -35,26 +38,28 @@ export default function ContactUs() {
           </div>
 
           {/* Hours Section */}
-          <div className="bg-white shadow-lg rounded-lg p-6 flex items-start space-x-4 transform hover:scale-105 transition duration-500 ease-in-out">
+          <div className="bg-white shadow-sm border border-slate-200 rounded-xl p-6 flex items-start space-x-4">
             <FaClock className="text-blue-500 text-2xl" />
             <div>
-              <h4 className="text-lg font-semibold">Hours of Operation</h4>
-              <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
-              <p>Saturday: Closed</p>
-              <p>Sunday: Closed</p>
+              <h2 className="font-display text-lg font-semibold text-slate-900">Hours of Operation</h2>
+              <p className="font-body text-slate-700">Monday - Friday: 9:00 AM - 5:00 PM</p>
+              <p className="font-body text-slate-700">Saturday: Closed</p>
+              <p className="font-body text-slate-700">Sunday: Closed</p>
             </div>
           </div>
 
           {/* Location Section */}
-          <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-start space-y-4 transform hover:scale-105 transition duration-500 ease-in-out">
+          <div className="bg-white shadow-sm border border-slate-200 rounded-xl p-6 flex flex-col items-start space-y-4">
             <div className="flex items-center space-x-4">
               <FaMapMarkerAlt className="text-blue-500 text-2xl" />
               <div>
-                <h4 className="text-lg font-semibold">Location</h4>
-                <p>26250 Euclid Ave suite 417, Euclid, OH 44132</p>
+                <h2 className="font-display text-lg font-semibold text-slate-900">Location</h2>
+                <p className="font-body text-slate-700">26250 Euclid Ave suite 417, Euclid, OH 44132</p>
               </div>
             </div>
             <MapEmbed />
+          </div>
+        </div>
           </div>
         </div>
       </section>

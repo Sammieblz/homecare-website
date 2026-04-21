@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import React, { useEffect } from 'react';
+import { motion, useAnimation, useReducedMotion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 interface VanProps {
@@ -8,37 +8,44 @@ interface VanProps {
 
 const Van: React.FC<VanProps> = ({ className }) => {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true });
+  const reduceMotion = useReducedMotion();
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.25 });
 
-  if (inView) {
-    controls.start('animate');
-  }
+  useEffect(() => {
+    if (reduceMotion) return;
+    if (inView) {
+      void controls.start('animate');
+    }
+  }, [controls, inView, reduceMotion]);
 
   const vanVariants = {
-    initial: { x: -300, opacity: 0.8 },
+    initial: { x: -220, opacity: 0.9 },
     animate: {
-      x: [0, 100, 300, 500, 700], // Move across the screen in steps
+      x: 720,
       opacity: 1,
       transition: {
         type: 'spring',
-        stiffness: 60,
-        damping: 10,
-        delay: 0.3,
-        duration: 4,
+        stiffness: 42,
+        damping: 14,
+        mass: 0.85,
       },
     },
   };
 
   return (
-    <motion.div
-      ref={ref}
-      className={`van-container ${className}`}
-      variants={vanVariants}
-      initial="initial"
-      animate={controls}
-    >
-      <img src="/Images/van1.png" alt="Van" className="van-image" />
-    </motion.div>
+    <div className={`van-container overflow-x-hidden ${className ?? ''}`}>
+      <div className="w-full py-4 border-y border-blue-900/10 bg-white/60">
+        <motion.div
+          ref={ref}
+          variants={vanVariants}
+          initial="initial"
+          animate={reduceMotion ? 'initial' : controls}
+          className="flex justify-start"
+        >
+          <img src="/Images/van1.png" alt="Van" className="van-image" />
+        </motion.div>
+      </div>
+    </div>
   );
 };
 
