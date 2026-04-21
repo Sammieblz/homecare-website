@@ -8,11 +8,14 @@ import AboutUs from './pages/AboutUs';
 import TransportationServices from './pages/TransportationServices';
 import ActivityDayCenter from './pages/ActivityDayCenter';
 import FAQ from './pages/FAQ';
+import { MobileStickyCTA } from './components/MobileStickyCTA';
+import { ScrollToTop } from './components/ScrollToTop';
 import './App.css';
 
 const App: React.FC = () => {
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         
         
@@ -25,6 +28,7 @@ const App: React.FC = () => {
             <Route path="/activity-day-center" element={<ActivityDayCenter />} />
             <Route path="/faq" element={<FAQ />} />
           </Routes>
+          <MobileStickyCTA />
           <Analytics />
       </div>
     </Router>

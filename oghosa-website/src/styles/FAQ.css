@@ -50,7 +50,7 @@ button.hover\:bg-gray-300:hover {
 
 /* Links in answers */
 .prose a {
-  color: #1e40af;
+  color: var(--brand-600);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
@@ -58,7 +58,7 @@ button.hover\:bg-gray-300:hover {
 
 .prose a:hover {
   text-decoration: underline;
-  color: #1e3a8a;
+  color: var(--brand-800);
 }
 
 /* Responsive adjustments */

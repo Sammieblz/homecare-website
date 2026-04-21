@@ -1,0 +1,48 @@
+﻿/* Premium-editorial foundation. Body ink uses brand scale (see brand.css). */
+
+:root {
+  --ink: var(--brand-950, #152a40);
+  --paper: #ffffff;
+  --paper-muted: #f8fafc;
+  /* Matches brand-950 @ 12% opacity; avoids color-mix gaps on older engines */
+  --hairline: rgba(21, 42, 64, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+  min-width: 0;
+}
+
+body {
+  min-width: 0;
+  font-family: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  color: #152a40;
+  color: var(--ink);
+  background: var(--paper);
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Fraunces, ui-serif, Georgia, serif;
+  letter-spacing: -0.01em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
